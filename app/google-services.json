@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "328777375886",
+    "project_id": "spotify-cead3",
+    "storage_bucket": "spotify-cead3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328777375886:android:e9572408e856ff73b0e9df",
+        "android_client_info": {
+          "package_name": "me.takhir.spotifyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328777375886-akh0q9l6t3kbuitpk17fkelsq3ddjv06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkMmTitsvdk-v8KAmObmCb29XVMeOr8Z8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328777375886-akh0q9l6t3kbuitpk17fkelsq3ddjv06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
