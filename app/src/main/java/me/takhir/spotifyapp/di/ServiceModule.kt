@@ -30,10 +30,10 @@ object ServiceModule {
     fun provideExoPlayer(
         @ApplicationContext context: Context,
         audioAttributes: AudioAttributes
-    ) = SimpleExoPlayer.Builder(context).build().apply {
-        setAudioAttributes(audioAttributes, true)
-        setHandleAudioBecomingNoisy(true)
-    }
+    ) = SimpleExoPlayer.Builder(context)
+        .setAudioAttributes(audioAttributes, true)
+        .setHandleAudioBecomingNoisy(true)
+        .build()
 
     @ServiceScoped
     @Provides
