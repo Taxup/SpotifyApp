@@ -39,18 +39,42 @@
         android:id="@+id/vpSong"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="@color/darkBackground"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ivPlayPause"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlayPrev"
         app:layout_constraintStart_toEndOf="@+id/ivCurSongImage" />
+
+    <ImageView
+        android:id="@+id/ivPlayPrev"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_round_skip_previous_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivPlayPause" />
 
     <ImageView
         android:id="@+id/ivPlayPause"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="@color/darkBackground"
+        android:background="@color/white"
         android:src="@drawable/ic_play"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivPlayNext" />
+
+    <ImageView
+        android:id="@+id/ivPlayNext"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_round_skip_next_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/bottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ivCurSongImage, ivPlayNext, ivPlayPrev, ivPlayPause, vpSong" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

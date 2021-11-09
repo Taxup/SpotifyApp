@@ -13,9 +13,7 @@ import me.takhir.spotifyapp.util.Constants.NETWORK_ERROR
 import me.takhir.spotifyapp.util.Event
 import me.takhir.spotifyapp.util.Resource
 
-class MusicServiceConnection(
-    context: Context
-) {
+class MusicServiceConnection(context: Context) {
 
     private val _isConnected = MutableLiveData<Event<Resource<Boolean>>>()
     val isConnected: LiveData<Event<Resource<Boolean>>> = _isConnected

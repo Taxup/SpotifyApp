@@ -39,7 +39,8 @@ class MainViewModel @Inject constructor(
                         title = it.description.title.toString(),
                         subtitle = it.description.subtitle.toString(),
                         songUrl = it.description.mediaUri.toString(),
-                        imageUrl = it.description.iconUri.toString()
+                        imageUrl = it.description.iconUri.toString(),
+                        selected = currentSong.value?.description?.mediaId == it.mediaId
                     )
                 })
             }
@@ -59,6 +60,9 @@ class MainViewModel @Inject constructor(
     }
 
     fun playOrToggleSong(mediaItem: Song, toggle: Boolean = false) {
+        _mediaItems.value = Resource.success(_mediaItems.value?.data?.map {
+            it.copy(selected = mediaItem.mediaId == it.mediaId)
+        })
         val isPrepared = playbackState.value?.isPrepared ?: false
         if (isPrepared && mediaItem.mediaId == currentSong.value?.getString(METADATA_KEY_MEDIA_ID)) {
             playbackState.value?.let {

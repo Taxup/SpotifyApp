@@ -7,9 +7,9 @@ import me.takhir.spotifyapp.data.entities.Song
 
 class SwipeSongAdapter : BaseSongAdapter(R.layout.swipe_item) {
 
-    override val differ = AsyncListDiffer<Song>(this, diffUtilCallback)
+    override val differ = AsyncListDiffer(this, diffUtilCallback)
 
-    override fun onBindViewHolder(holder: BaseSongAdapter.SongViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val song = songs[position]
         holder.itemView.apply {
             val text = "${song.title} - ${song.subtitle}"
