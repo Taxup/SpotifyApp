@@ -5,13 +5,14 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_radial_black"
     tools:context=".ui.MainActivity">
 
     <FrameLayout
         android:id="@+id/flFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/vpSong"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMusicBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,17 +40,15 @@
         android:id="@+id/vpSong"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivPlayPrev"
         app:layout_constraintStart_toEndOf="@+id/ivCurSongImage" />
 
     <ImageView
         android:id="@+id/ivPlayPrev"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_round_skip_previous_24"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/ic_prev"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ivPlayPause" />
 
@@ -57,17 +56,15 @@
         android:id="@+id/ivPlayPause"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="@color/white"
         android:src="@drawable/ic_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/ivPlayNext" />
 
     <ImageView
         android:id="@+id/ivPlayNext"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_round_skip_next_24"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/ic_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

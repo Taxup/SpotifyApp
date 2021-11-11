@@ -67,8 +67,8 @@ class SongFragment : Fragment(R.layout.fragment_song) {
     }
 
     private fun updateTitleAndSongImage(song: Song) {
-        val title = "${song.title} - ${song.subtitle}"
-        tvSongName.text = title
+        tvSongName.text = song.title
+        tvSongDescription.text = song.subtitle
         glide.load(song.imageUrl).into(ivSongImage)
     }
 
@@ -100,7 +100,7 @@ class SongFragment : Fragment(R.layout.fragment_song) {
             playbackState.observe(viewLifecycleOwner, {
                 this@SongFragment.playbackState = it
                 ivPlayPauseDetail.setImageResource(
-                    if (it?.isPlaying == true) R.drawable.ic_round_pause_24
+                    if (it?.isPlaying == true) R.drawable.ic_pause
                     else R.drawable.ic_play
                 )
                 seekBar.progress = it?.position?.toInt() ?: 0
