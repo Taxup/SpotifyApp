@@ -16,6 +16,7 @@ import me.takhir.spotifyapp.exoplayer.toSong
 import me.takhir.spotifyapp.ui.viewmodels.MainViewModel
 import me.takhir.spotifyapp.ui.viewmodels.SongViewModel
 import me.takhir.spotifyapp.util.Status
+import me.takhir.spotifyapp.util.extenstion.setupToolbar
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -39,6 +40,10 @@ class SongFragment : Fragment(R.layout.fragment_song) {
         super.onViewCreated(view, savedInstanceState)
         setupViewModel()
 
+        setupToolbar(
+            toolbar = toolbar,
+            icon = R.drawable.ic_arrow_back
+        )
         ivPlayPauseDetail.setOnClickListener {
             currentPlayingSong?.let {
                 mainViewModel.playOrToggleSong(it, true)
@@ -62,8 +67,14 @@ class SongFragment : Fragment(R.layout.fragment_song) {
             }
         })
 
-        ivSkip.setOnClickListener { mainViewModel.skipToNextSong() }
-        ivSkipPrevious.setOnClickListener { mainViewModel.skipToPrevSong() }
+        ivSkip.setOnClickListener {
+            mainViewModel.skipToNextSong()
+            songViewModel.updateCurrentSongDuration()
+        }
+        ivSkipPrevious.setOnClickListener {
+            mainViewModel.skipToPrevSong()
+            songViewModel.updateCurrentSongDuration()
+        }
     }
 
     private fun updateTitleAndSongImage(song: Song) {
@@ -96,6 +107,7 @@ class SongFragment : Fragment(R.layout.fragment_song) {
 
                 currentPlayingSong = it.toSong()
                 updateTitleAndSongImage(currentPlayingSong!!)
+                songViewModel.updateCurrentSongDuration()
             })
             playbackState.observe(viewLifecycleOwner, {
                 this@SongFragment.playbackState = it

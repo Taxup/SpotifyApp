@@ -12,7 +12,7 @@
         android:id="@+id/flFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomMusicBar"
+        app:layout_constraintBottom_toTopOf="@+id/vpSong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,8 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:src="@drawable/ic_prev"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivPlayPause"
+        app:layout_constraintBottom_toBottomOf="@id/ivPlayPause"
         app:layout_constraintEnd_toStartOf="@id/ivPlayPause" />
 
     <ImageView
@@ -65,7 +66,8 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:src="@drawable/ic_next"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivPlayPause"
+        app:layout_constraintBottom_toBottomOf="@id/ivPlayPause"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.Group

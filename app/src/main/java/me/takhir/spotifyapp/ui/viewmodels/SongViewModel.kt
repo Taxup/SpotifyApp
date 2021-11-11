@@ -36,10 +36,13 @@ class SongViewModel @Inject constructor(
                 val pos = playbackState.value?.currentPlaybackPosition ?: 0
                 if (currentPlayerPosition.value != pos) {
                     _currentPlayerPosition.value = pos
-                    _currentSongDuration.value = MusicService.currentSongDuration
                 }
                 delay(UPDATE_PLAYER_POSITION_INTERVAL)
             }
         }
+    }
+
+    fun updateCurrentSongDuration() {
+        _currentSongDuration.value = MusicService.currentSongDuration
     }
 }

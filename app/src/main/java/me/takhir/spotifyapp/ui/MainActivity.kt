@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
                 this@MainActivity.playbackState = it
                 ivPlayPause.setImageResource(
                     if (it?.isPlaying == true) {
-                        R.drawable.ic_round_pause_24
+                        R.drawable.ic_pause
                     } else {
                         R.drawable.ic_play
                     }
